@@ -1,0 +1,79 @@
+body {
+	/*(background-color: rgb(192,192,192); */
+	font-family: Tahoma, Geneva, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background: url(../images/vinyl.jpg);
+	background-repeat: no-repeat;
+	background-size: 1405px auto;
+	font-size: 16px;
+}
+
+/* Type will scale with document */
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2.5em;
+}
+h3 {
+  font-size: 2em;
+}
+
+#question {
+	font-size: 4.0em;
+	font-family: 'Gentium Book Basic', serif;
+	font-weight: 500;
+	position: fixed;
+    top: 1.05em;
+    right: 5.5em;
+}
+#album {
+	font-size: 2.8em;
+	font-family: 'Open Sans', sans-serif;
+	position: fixed;
+	top: 4.1em;
+	right: 3.55em;
+}
+#answer-wrapper {
+	font-size: 1.5em;
+	position: fixed;
+	bottom: 4.2em;
+	right: 3em;
+}
+#question-number {
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	position: fixed;
+	bottom: 5.4em;
+  	left: .7em;
+}
+#score {
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	position: fixed;
+	bottom: 2.1em;
+	left: .7em;
+}
+#submit {
+	-webkit-border-radius: 11;
+	-moz-border-radius: 11;
+	position: fixed;
+	bottom: 2.3em;
+	right: 12em;
+	border-radius: 11px;
+	text-shadow: 1px 1px 1px #666666;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	background: #000000;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	}
+	
+#submit:hover {
+	background: #212426;
+	text-decoration: none;
+}
+
+
+
