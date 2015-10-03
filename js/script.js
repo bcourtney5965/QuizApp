@@ -116,26 +116,31 @@ $(document).ready(function() {
         }
     ];
 
-	$.each(questions, function( item ) {
+	$.each(questions, function(key, value) {
+        var append;
+
 		// append
 			// Question
-			$("body").append("<span id=\"question\">" + question + "</span>");
-			// // Current Question Number
-			$("body").append("<h3 id=\"question-number\">" + "Question: " + currQuestionNumber + "/5" + "</h3>");
+            append = '<span id="question">' + question + '</span>';
+			// Current Question Number
+			append += '<h3 id="question-number">' + "Question: " + currQuestionNumber + "/5" + '</h3>';
 			// // Current Score
-			$("body").append("<h3 id=\"score\">" + "Current Score: " + currScore + "/2" + "</h3>");
+			append += '<h3 id="score">' + "Current Score: " + currScore + "/2" + '</h3>';
             // Button
-            $("body").append("<input id=\"submit\" type=\"submit\" value=\"Submit\">");
+            append += '<input id="submit" type="submit" value="Submit">';
 			// Album
-            $("body").append("<span id=\"album\">" + item["album"] + "</span>");
+            append += '<span id="album">' + value["album"] + '</span';
 
-		$.each(item["options"], function ( option ) {
+            // Appending
+            $("body").append(append);
+
+		$.each(key["value"], function ( option ) {
 			// append
 				// artist choices
-                $("body").append("<input type=\"radio\" name=\"option\" class=\"option\" value=\"0\"><span class=\"answer\">option["artist"]</span>")
+                console.log('<input type=\"radio\" name=\"option\" class=\"option\" value=\"0\"><span class=\"answer\">option["artist"]</span>');
 
-		})
-	})
+		});
+	});
 
 
 
