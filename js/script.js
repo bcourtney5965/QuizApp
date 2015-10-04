@@ -116,9 +116,8 @@ $(document).ready(function() {
         }
     ];
 
-	$.each(questions, function(key, value) {
+	$.each(questions, function(index, value) {
         var append;
-
 		// append
 			// Question
             append = '<span id="question">' + question + '</span>';
@@ -133,16 +132,14 @@ $(document).ready(function() {
 
             // Appending
             $("body").append(append);
-
-		$.each(key["value"], function ( option ) {
+            
+		$.each(value["options"], function (index, value) {
 			// append
+                console.log(value["artist"]);  // -> this works, what's going on?
 				// artist choices
-                console.log('<input type=\"radio\" name=\"option\" class=\"option\" value=\"0\"><span class=\"answer\">option["artist"]</span>');
-
+                $("body").append('<input type="radio" name="option" class="option" value="0"><span class="answer">value["artist"]</span>');
 		});
 	});
-
-
 
 });
 
