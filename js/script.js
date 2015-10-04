@@ -137,7 +137,7 @@ $(document).ready(function() {
 			// append
                 console.log(value["artist"]);  // -> this works, what's going on?
 				// artist choices
-                $("body").append('<input type="radio" name="option" class="option" value="0"><span class="answer">value["artist"]</span>');
+                $("body").append('<input type="radio" name="option" class="option" value="0"><span class="answer">' + value["artist"] + '</span>');
 		});
 	});
 
