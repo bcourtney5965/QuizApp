@@ -2,11 +2,10 @@ $(document).ready(function() {
     $("body").append('<p>If you\'re reading this - jQuery is connected.</p>');
 
     // Global Variables
-    var question = "Select who created the album:";
+    var questionTitle = "Select who created the album:";
     var currQuestionNumber = 0;
     var currScore = 0;
-    var question_number = [1, 2, 3, 4, 5];
-    var score = [1, 2, 3, 4, 5];
+    var output;
 
     var questions = [
         {
@@ -116,31 +115,42 @@ $(document).ready(function() {
         }
     ];
 
-	$.each(questions, function(index, value) {
+    output = '<span id="questionTitle">' + questionTitle + '</span>';
+    // Current Question Number
+    output += '<h3 id="question-number">Question: ' + currQuestionNumber + '/5</h3>';
+    // // Current Score
+    output += '<h3 id="score">Current Score: ' + currScore + '/2</h3>';
+    // Button
+    output += '<input id="submit" type="submit" value="Submit">';
+    $("body").append(output);
+
+	$.each(questions, function(indexQ, question) {
         var append;
 		// append
 			// Question
-            append = '<span id="question">' + question + '</span>';
-			// Current Question Number
-			append += '<h3 id="question-number">' + "Question: " + currQuestionNumber + "/5" + '</h3>';
-			// // Current Score
-			append += '<h3 id="score">' + "Current Score: " + currScore + "/2" + '</h3>';
-            // Button
-            append += '<input id="submit" type="submit" value="Submit">';
+            append = '<div id="question-' + indexQ + '">';
 			// Album
-            append += '<span id="album">' + value["album"] + '</span';
-
-            // Appending
-            $("body").append(append);
+            append += '<h3 class="album">' + question["album"] + '</h3>';
             
-		$.each(value["options"], function (index, value) {
+		$.each(question["options"], function (indexO, option) {
 			// append
-                console.log(value["artist"]);  // -> this works, what's going on?
 				// artist choices
-                $("body").append('<input type="radio" name="option" class="option" value="0"><span class="answer">' + value["artist"] + '</span>');
-		});
+                append += '<div class="answer-wrapper">';
+                append += '<input type="radio" name="option" class="option" value="' + indexO + '">';
+                append += '<span class="answer">' + option["artist"] + '</span>';
+		        append += '</div>';  
+        });
+             // Appending
+            append += '</div>';
+            $("body").append(append);
 	});
-
+    $.each(questions, function(indexQ, question) {
+        if (indexQ !== 0) {         
+            var selector;
+            selector = '#question-' + indexQ;
+            $(selector).hide();
+        }
+    });
 });
 
 

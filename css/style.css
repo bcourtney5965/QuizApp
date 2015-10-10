@@ -19,41 +19,6 @@ h3 {
   font-size: 2em;
 }
 
-#question {
-	font-size: 4.0em;
-	font-family: 'Gentium Book Basic', serif;
-	font-weight: 500;
-	position: fixed;
-    top: 1.05em;
-    right: 5.5em;
-}
-#album {
-	font-size: 2.8em;
-	font-family: 'Open Sans', sans-serif;
-	position: fixed;
-	top: 4.1em;
-	right: 3.55em;
-}
-#answer-wrapper {
-	font-size: 1.5em;
-	position: fixed;
-	bottom: 4.2em;
-	right: 3em;
-}
-#question-number {
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	position: fixed;
-	bottom: 5.4em;
-  	left: .7em;
-}
-#score {
-	font-family: 'Open Sans', sans-serif;
-	color: white;
-	position: fixed;
-	bottom: 2.1em;
-	left: .7em;
-}
 #submit {
 	-webkit-border-radius: 11;
 	-moz-border-radius: 11;
